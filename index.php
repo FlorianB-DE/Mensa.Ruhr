@@ -69,9 +69,9 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     <nav class="navbar navbar-light bg-light justify-content-between" style="padding: 0">
       <span class="navbar-brand mb-0 h1" style="padding-left: 1rem"><?php echo $pageTitle; ?></span>
       <form class="form-inline">
-        <?php if ($login == FALSE) { ?>
+        <?php if ($login == FALSE && isset($oauth_request_url)) { ?>
           <a href="/oauth.php" class="btn btn-outline-success my-2 my-sm-0" style="margin-right: 1rem;margin-top: 10px !important">Login</a>
-        <?php } else { ?>
+        <?php } elseif ($login == TRUE) { ?>
           <button onclick='document.cookie.split(";").forEach(function(c) { document.cookie = c.replace(/^ +/, "").replace(/=.*/, "=;expires=" + new Date().toUTCString() + ";path=/"); });location.reload()' class="btn btn-outline-success my-2 my-sm-0" style="margin-right: 1rem;margin-top: 10px !important">Logout</button>
         <?php } ?>
       </form>
