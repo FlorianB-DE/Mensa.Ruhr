@@ -55,10 +55,11 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 ?>
 <html>
   <head>
-    <title><?php echo $pageTitle; ?></title>
+    <title><?=$pageTitle;?></title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name='robots' content='noindex,follow' />
+    <link rel="icon" href="<?=$favicon;?>">
     <link href="/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
     <script src="/bootstrap/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
     <script>
